@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@supabase/supabase-js": "^2.100.1",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.395.0",

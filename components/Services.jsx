@@ -1,49 +1,79 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Sparkles, Activity, Smile, Sun, Layers, Star, Crown, Scissors } from 'lucide-react';
+import { Activity, Layers, Sun, Crown, Scissors, Smile, Shield, Sparkles, Zap, AlignCenter } from 'lucide-react';
 
-const services = [
-  { icon: Sparkles, title: 'Teeth Cleaning', desc: 'Professional scaling and polishing by our Ex-AIIMS dentist to remove plaque, tartar and stains. Recommended every 6 months.', color: 'from-blue-500 to-cyan-400', bg: 'bg-blue-50' },
-  { icon: Activity, title: 'Root Canal (RCT)', desc: 'Advanced pain-free RCT using rotary endodontics to save your infected tooth with high success rates.', color: 'from-red-500 to-rose-400', bg: 'bg-red-50' },
-  { icon: Layers, title: 'Braces & Aligners', desc: 'Metal, ceramic and invisible aligners to straighten teeth. Customised plans for children, teens and adults.', color: 'from-purple-500 to-violet-400', bg: 'bg-purple-50' },
-  { icon: Sun, title: 'Teeth Whitening', desc: 'Professional laser and bleaching treatments to brighten your smile by several shades in a single visit.', color: 'from-yellow-500 to-amber-400', bg: 'bg-yellow-50' },
-  { icon: Star, title: 'Dental Implants', desc: 'Permanent titanium tooth replacements that look, feel and function like natural teeth with 95%+ success rate.', color: 'from-green-500 to-emerald-400', bg: 'bg-green-50' },
-  { icon: Smile, title: 'Smile Makeover', desc: 'Complete cosmetic transformation combining veneers, whitening and contouring for your dream smile.', color: 'from-pink-500 to-rose-400', bg: 'bg-pink-50' },
-  { icon: Crown, title: 'Fixed Prosthodontics', desc: 'Expert placement of crowns, bridges and fixed dentures to restore damaged or missing teeth permanently.', color: 'from-orange-500 to-amber-400', bg: 'bg-orange-50' },
-  { icon: Crown, title: 'Crowns & Bridges', desc: 'Custom porcelain and zirconia crowns and bridges precision-fitted for comfort and a seamless natural look.', color: 'from-teal-500 to-cyan-400', bg: 'bg-teal-50' },
-  { icon: Scissors, title: 'Tooth Extraction', desc: 'Painless simple and surgical extractions including wisdom tooth removal with quick healing and minimal discomfort.', color: 'from-rose-500 to-pink-400', bg: 'bg-rose-50' },
+const categories = [
+  {
+    label: 'Treatments',
+    items: [
+      { icon: Activity,    title: 'RCT (Root Canal)',         desc: 'Advanced pain-free root canal treatment using laser and rotary endodontics to save your infected tooth.' },
+      { icon: Smile,       title: 'Tooth Reshaping',          desc: 'Aesthetic improvements to the shape, size and contour of your teeth for a more balanced smile.' },
+      { icon: Zap,         title: 'Laser RCT',                desc: 'Laser-assisted root canal treatment for greater precision, faster healing and minimal discomfort.' },
+    ],
+  },
+  {
+    label: 'Surgery',
+    items: [
+      { icon: Scissors,    title: 'Surgical Tooth Extraction', desc: 'Painless simple and surgical extractions including wisdom tooth removal with quick healing.' },
+      { icon: Shield,      title: 'Oral & Maxillofacial',      desc: 'Complex oral and maxillofacial surgeries performed with precision and care.' },
+    ],
+  },
+  {
+    label: 'Procedures',
+    items: [
+      { icon: Crown,       title: 'Ceramic Crowns & Bridges',  desc: 'Custom ceramic and zirconia crowns and bridges precision-fitted for a seamless natural look.' },
+      { icon: Crown,       title: 'Fixed Prosthodontics',      desc: 'Permanent dental restorations including crowns, bridges and fixed dentures.' },
+      { icon: Layers,      title: 'Dental Braces',             desc: 'Metal, ceramic and invisible aligners to straighten teeth. Customised plans for all ages.' },
+      { icon: AlignCenter, title: 'Orthodontic Alignment',     desc: 'Comprehensive orthodontic treatment to correct misaligned teeth and bite issues.' },
+      { icon: Sparkles,    title: 'Dental Laminates',          desc: 'Ultra-thin porcelain laminates bonded to the front of teeth for an instant smile transformation.' },
+      { icon: Sun,         title: 'Composite Bonding',         desc: 'Tooth-coloured resin applied to repair chips, cracks and gaps for a natural-looking finish.' },
+      { icon: Zap,         title: 'Laser Dentistry',           desc: 'Advanced laser treatments for gum care, cavity detection and pain-free dental procedures.' },
+      { icon: Smile,       title: 'Braces Adjustment',         desc: 'Regular and precise braces adjustments to ensure your treatment progresses on track.' },
+    ],
+  },
+  {
+    label: 'Tests & Therapy',
+    items: [
+      { icon: Shield,      title: 'Oral Lesions Screening',    desc: 'Early detection screening tests for oral lesions to ensure timely diagnosis and treatment.' },
+      { icon: Activity,    title: 'Oral Rehabilitation',       desc: 'Comprehensive oral rehabilitation therapy to restore full dental function and aesthetics.' },
+    ],
+  },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 px-5 md:px-8 lg:px-16 bg-blue-50/40">
+    <section id="services" className="py-20 px-5 md:px-8 lg:px-16 bg-off-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-          <span className="inline-block bg-primary-light text-primary text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">Our Services</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Comprehensive Dental Care</h2>
-          <p className="text-gray-500 mt-3 max-w-xl mx-auto text-base">From routine checkups to advanced cosmetic procedures — all under one roof.</p>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="mb-12">
+          <span className="font-heading text-xs font-bold tracking-[2.5px] uppercase text-gold block mb-2">What We Offer</span>
+          <h2 className="font-heading font-bold text-3xl text-text-dark">Comprehensive Dental Care</h2>
+          <p className="text-text-mid mt-2 max-w-xl text-sm">From routine checkups to advanced surgical and aesthetic procedures — all under one roof.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map(({ icon: Icon, title, desc, color, bg }, i) => (
-            <motion.div key={title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.07, duration: 0.5 }}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-card transition-all border border-gray-100 group cursor-default"
-            >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${bg} group-hover:scale-110 transition-transform`}>
-                <div className={`bg-gradient-to-br ${color} w-8 h-8 rounded-lg flex items-center justify-center`}>
-                  <Icon size={16} className="text-white" />
-                </div>
-              </div>
-              <h3 className="font-bold text-gray-900 text-base mb-2">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-            </motion.div>
-          ))}
-        </div>
+        {categories.map(({ label, items }, ci) => (
+          <div key={label} className="mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="font-heading font-bold text-xs uppercase tracking-[2px] text-gold border-l-4 border-gold pl-3">{label}</span>
+              <div className="flex-1 h-px bg-border-light" />
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {items.map(({ icon: Icon, title, desc }, i) => (
+                <motion.div key={title}
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }} transition={{ delay: i * 0.05, duration: 0.4 }}
+                  className="bg-white border border-border-light border-t-[3px] border-t-transparent hover:border-t-gold p-5 transition-all hover:shadow-gold-sm hover:-translate-y-1 group cursor-default"
+                >
+                  <div className="w-9 h-9 bg-gold-bg flex items-center justify-center mb-3 group-hover:bg-gold transition-colors">
+                    <Icon size={16} className="text-gold group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="font-heading font-bold text-xs text-gold uppercase tracking-wide mb-1.5">{title}</h3>
+                  <p className="text-text-mid text-xs leading-relaxed">{desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

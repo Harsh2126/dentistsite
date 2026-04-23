@@ -16,8 +16,8 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 export default function Home() {
   return (
     <main>
-      <DentalBackground />
       <Navbar />
+      <DentalBackground />
       <Hero />
       <Stats />
       <Services />
